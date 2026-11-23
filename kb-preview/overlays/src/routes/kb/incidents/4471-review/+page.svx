@@ -1,0 +1,97 @@
+---
+layout: runbook
+title: '#4471 review · separate the mechanisms, keep the evidence'
+owner: OpenCode harness; support desk review pending
+status: draft
+reviewed: 2026-11-23
+signature: OpenCode / litellm/gpt-6.1-sol
+---
+
+<script>
+  import Callout from '#lib/kb/Callout.svelte';
+  import ReviewFindings from '#lib/kb/ReviewFindings.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const signature = metadata.signature;
+</script>
+
+<Callout>
+Draft review of the KB export dated 2026-10-04, not a live support-system view.
+The two GitHub issues are linked in the computed table below. No production fix has been verified.
+This page does not claim that the support desk has accepted a new policy.
+</Callout>
+
+The [original incident page](/kb/incidents/4471) says “One issue, one fix queued”.
+Its computed cause table disagrees. The supplied KB describes a shared-parser
+problem and a separate booking-form instruction problem, so one parser fix must
+not be treated as resolving both.
+
+## What is different
+
+- **Parser:** the shared parser reads numeric dates month-first even when the
+  tenant's date convention is day-first. In `R-41203`, an app booking for
+  2 December appears in the invite as 12 February.
+- **Form hint:** booking-v3 prints `MM/DD/YYYY`, but for a day-first tenant its
+  form interprets the entry day-first. In `R-41259`, a form booking for 11 April
+  appears as 4 November. The visible instruction and interpretation must agree;
+  this is not evidence that the shared parser alone caused this report.
+
+These mechanisms come from the supplied KB logic and tenant data. The production
+parser and form were not supplied; reproductions against the actual product
+remain to be performed. The computed assignment is useful for triage, not proof
+that every report individually demonstrates the assigned mechanism.
+
+<ReviewFindings />
+
+<QueueTimeline ticket={4471} />
+
+## What the desk should do next
+
+1. Check the report body and the tenant's configured locale and form version.
+   Compare expected and actual behavior, including how the date entered the system.
+2. Match a report to a demonstrated mechanism, not just a similar subject,
+   `browserLocale`, or `intakeTag`. App/email reports and form reports can differ
+   even for the same tenant.
+3. Track the shared-parser and booking-v3 hint problems in separate issues.
+   Keep the original report IDs and the snapshot date with each count.
+4. Keep unexplained reports visibly unresolved pending evidence. Do not infer
+   another defect solely from a city name, weekday, or the desk's note label.
+5. Before claiming resolution, verify the product flow, record the fix and check
+   the disposition of the flagged reports. Passing tests of this KB classifier
+   only verifies the KB, not the production product.
+
+For example, `R-41211` and `R-41251` share a tenant and title, but the app/form
+difference changes their assignment. `R-41256` and `R-41428` even share the same
+body and channel; different tenants and form versions put them in different groups.
+
+## Guidance and decision history
+
+The [triage page](/kb/triage/dedupe) and [accepted decision 0001](/kb/decisions/0001-dedupe-by-subject)
+say to merge on subject alone. Their review date is old, and the rendered triage
+page warns that it is stale. Its own interactive examples demonstrate why the
+written rule can merge different causes or split one cause across titles.
+
+**Proposed process change, not an accepted desk decision:** stop treating a
+subject match as sufficient evidence for merging. While investigating, retain
+uncertain reports for triage rather than hiding them in a known ticket. Ask the
+desk owner to approve updated operational guidance and a new decision that
+supersedes 0001; preserve the accepted historical record unchanged.
+
+## Reading and maintaining this page
+
+The export is a snapshot. Rendering it again recalculates the displayed values
+from the same files; it does not fetch later reports. Counts and review age are
+different: a recent review date is not proof of a correct diagnosis.
+
+When new data or updated issue status is available, update the report export
+through the agreed source, recompute the counts, reconcile moved report IDs, and
+re-read the rendered page before changing the review date. Keep both issues open
+until their separate verification criteria are satisfied. Do not interpret a
+partial month, a drop in reports, or a spike in merges as proof of a fix.
+
+The signature below identifies the harness that authored this draft; it is not
+the student's signature or an approval by the support desk. The desk reference
+is computed by the supplied component, not entered by hand.
+
+<RenderStamp {signature} />

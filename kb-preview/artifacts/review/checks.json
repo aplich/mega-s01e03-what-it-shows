@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-23T16:52:13.938Z",
+  "browser": "159.0.8154.6",
+  "path": "/kb/incidents/4471-review/",
+  "viewports": {
+    "desktop": {
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "pageWidth": 1280,
+      "errors": [],
+      "deskRef": "DR-FZFK-F3AH"
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "errors": [],
+      "deskRef": "DR-FZFK-F3AH"
+    }
+  }
+}

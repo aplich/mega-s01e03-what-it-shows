@@ -1,0 +1,28 @@
+{
+  "name": "s01e03-kb-preview",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
+  "scripts": {
+    "sync:export": "node scripts/sync-export.mjs",
+    "dev": "vite dev --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "npm run sync:export && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "node --import ./tests/register-typescript.mjs --test tests/*.test.mjs",
+    "capture": "node scripts/capture.mjs",
+    "capture:review": "node --import ./tests/register-typescript.mjs scripts/capture-review.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "4.0.1",
+    "@sveltejs/kit": "3.4.0",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "mdsvex": "1.0.1",
+    "playwright": "1.65.1",
+    "svelte": "5.59.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.8"
+  }
+}

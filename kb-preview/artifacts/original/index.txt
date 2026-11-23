@@ -1,0 +1,22 @@
+support desk · kb
+Support knowledge base
+
+owner support desk
+living
+reviewed 2026-09-28 · 56 days ago
+
+What the support desk knows, kept next to the code that knows it. One desk, every product: sched-prod (calendar invites for about 300k people) and the rest. When something breaks, the reports land here first.
+
+Start with triage if you are new on the desk.
+
+Pages
+page	owner	status	reviewed
+0001 · Duplicates share a subject line	rune	accepted	2024-06-11
+#4471 · dates parse mm/dd in eu locales	support desk	known	2026-09-30
+#4471 review · separate the mechanisms, keep the evidence	OpenCode harness; support desk review pending	draft	2026-11-23
+Triage: duplicate reports	support desk	accepted	2024-06-11
+Writing a page
+
+Keep the words here and the logic in src/lib. A number that can be computed should be computed by a component, not typed into a paragraph.
+
+Pages are written by people. Tables and charts are built from data at render time.

@@ -1,0 +1,4 @@
+node_modules/
+.svelte-kit/
+/src/lib/
+/src/routes/kb/

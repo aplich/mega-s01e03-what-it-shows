@@ -1,0 +1,9 @@
+# Never include credentials, local harness configuration or private session notes.
+.env
+.env.*
+!.env.example
+opencode.json
+S01E03-HANDOFF.md
+node_modules/
+.svelte-kit/
+*.log
