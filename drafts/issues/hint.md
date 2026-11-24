@@ -1,4 +1,12 @@
-# booking-v3 shows MM/DD/YYYY for a day-first form — 33 assigned reports
+# booking-v3 date hint contradicts tenant date order — 33 reports
+
+## Resolution — 2026-11-24
+
+Closed as **not planned**: the reported engineering outcome is
+`hint won't fix — booking-v3 form retired`. The misleading hint was **not fixed**.
+See the [versioned closing comment](https://github.com/aplich/mega-s01e03-what-it-shows/blob/main/drafts/resolutions/hint.md) for the owner-supplied
+reference evidence and its limits. The original analysis below records the
+4 October snapshot, not a claim that this harness tested production.
 
 ## Status and scope
 
@@ -15,7 +23,7 @@ from 2026-04-17 through 2026-09-22:
 | `copper.studio` | `es-ES` | `booking-v3` | 11 |
 | `pale.harbour` | `pt-PT` | `booking-v3` | 10 |
 
-These reports are currently merged into source ticket #4471, although its
+In the snapshot these reports are merged into source ticket #4471, although its
 documented parser fix does not address this distinct form-hint mismatch.
 
 ## Problem

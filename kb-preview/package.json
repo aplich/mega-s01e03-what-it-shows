@@ -13,7 +13,8 @@
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
     "test": "node --import ./tests/register-typescript.mjs --test tests/*.test.mjs",
     "capture": "node scripts/capture.mjs",
-    "capture:review": "node --import ./tests/register-typescript.mjs scripts/capture-review.mjs"
+    "capture:review": "node --import ./tests/register-typescript.mjs scripts/capture-review.mjs",
+    "capture:decision": "node --import ./tests/register-typescript.mjs scripts/capture-review.mjs decision"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "4.0.1",

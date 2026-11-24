@@ -1,0 +1,22 @@
+{
+  "recordedOn": "2026-11-24",
+  "reportedUpdate": "#4471 closed 05 oct",
+  "coursePage": "https://hq.mega.dev/challenges/what-it-shows",
+  "basis": "Engineering outcomes supplied by the repository owner through a solved S01E03 debrief and the linked reference resolutions; applied at the owner's request, not independently observed on this attempt's signed-in Challenge page.",
+  "resolutions": {
+    "parser": {
+      "state": "closed",
+      "stateReason": "completed",
+      "outcome": "fixed",
+      "detail": "fix(dates): parse dd/mm for eu locales",
+      "evidence": "https://github.com/jbabinski/mega-s01e03/issues/1#issuecomment-6602094089"
+    },
+    "hint": {
+      "state": "closed",
+      "stateReason": "not_planned",
+      "outcome": "won't fix",
+      "detail": "booking-v3 form retired; the misleading hint was not fixed",
+      "evidence": "https://github.com/jbabinski/mega-s01e03/issues/2#issuecomment-6602095393"
+    }
+  }
+}

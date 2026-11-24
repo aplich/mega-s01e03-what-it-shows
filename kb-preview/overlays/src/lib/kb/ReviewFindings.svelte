@@ -2,6 +2,7 @@
   import raw from '#lib/data/reports-4471.json';
   import notes from '#lib/data/desk-notes.json';
   import links from '#lib/data/review-links.json';
+  import outcomes from '#lib/data/review-outcomes.json';
   import { groupByCause, readAs, uniqueById, type Report } from '#lib/kb/causes';
   import { tenantOf } from '#lib/kb/locales';
 
@@ -24,6 +25,7 @@
     unplaced: 'No supported cause assigned: needs triage',
   };
   const issueLink = (cause: string): string | null => links[cause as keyof typeof links] ?? null;
+  const resolutionOf = (cause: string) => outcomes.resolutions[cause as keyof typeof outcomes.resolutions];
 </script>
 
 <h2>Count each report once</h2>
@@ -48,6 +50,10 @@
           <td>
             {#if issueLink(group.cause)}
               <a href={issueLink(group.cause)}>Separate GitHub issue</a>
+              {#if resolutionOf(group.cause)}
+                <br /><span class="issue-resolution">{resolutionOf(group.cause).state} · {resolutionOf(group.cause).stateReason}</span>
+                <br />{resolutionOf(group.cause).outcome}
+              {/if}
             {:else}
               Draft only — not published
             {/if}
@@ -102,7 +108,8 @@
   <strong>{beforeFirstMerge}</strong> reports had already arrived.
   In the week starting {mergeWeek}, <strong>{incoming}</strong> reports arrived while
   <strong>{merged}</strong> were merged. The large merge bar reflects backlog processing,
-  not a demonstrated spike in new reports. No supplied evidence establishes a deployed fix.
+   not a demonstrated spike in new reports. The timeline alone does not establish a deployed fix;
+   the engineering outcomes are recorded separately with their sources.
 </p>
 
 <style>

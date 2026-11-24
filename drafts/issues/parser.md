@@ -1,4 +1,12 @@
-# Date parser reads day-first tenant input as month-first — 379 assigned reports
+# Shared date parser swaps day and month for day-first tenants — 379 reports
+
+## Resolution — 2026-11-24
+
+Closed as **completed** for the reported engineering outcome
+`fix(dates): parse dd/mm for eu locales`. The hint issue is separately **not planned**
+because booking-v3 was retired, not fixed. See the [versioned closing comment](https://github.com/aplich/mega-s01e03-what-it-shows/blob/main/drafts/resolutions/parser.md)
+for the owner-supplied reference evidence and its limits. The original analysis below
+records the 4 October snapshot, not a claim that this harness tested production.
 
 ## Status and scope
 
@@ -7,7 +15,7 @@ exported on 2026-10-04. The production parser was not provided,
 so the reproduction below is a proposed verification, not a completed test.
 
 **379 unique reports are assigned to `parser` by the supplied KB rule**, across
-11 tenants, received from 2026-04-01 through 2026-10-04. They are currently merged
+11 tenants, received from 2026-04-01 through 2026-10-04. In the snapshot they are merged
 into source ticket #4471. This count includes five explicitly flagged reports
 whose descriptions do not independently establish this mechanism; see below.
 

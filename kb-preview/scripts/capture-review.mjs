@@ -5,9 +5,15 @@ import { chromium } from 'playwright';
 import { deskRef } from '../src/lib/kb/desk-ref.ts';
 
 const base = 'http://127.0.0.1:4173';
-const path = '/kb/incidents/4471-review/';
-const output = new URL('../artifacts/review/', import.meta.url);
-const source = await readFile(new URL('../overlays/src/routes/kb/incidents/4471-review/+page.svx', import.meta.url), 'utf8');
+const targets = {
+  review: { path: '/kb/incidents/4471-review/', status: 'draft' },
+  decision: { path: '/kb/decisions/0002-dedupe-by-cause/', status: 'proposed' },
+};
+const target = process.argv[2] ?? 'review';
+assert.ok(Object.hasOwn(targets, target), 'Choose review or decision');
+const { path, status } = targets[target];
+const output = new URL(`../artifacts/${target}/`, import.meta.url);
+const source = await readFile(new URL(`../overlays/src/routes${path}+page.svx`, import.meta.url), 'utf8');
 const signature = source.match(/^signature: (.+)$/m)[1];
 assert.match(signature, /^v1\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/, 'Use the course-issued signature, not an author display name; the course validates its authenticity.');
 const links = JSON.parse(await readFile(new URL('../overlays/src/lib/data/review-links.json', import.meta.url), 'utf8'));
@@ -39,7 +45,7 @@ try {
     });
     assert.equal((await page.goto(`${base}${path}`, { waitUntil: 'networkidle' })).status(), 200);
     const text = await page.locator('body').innerText();
-    assert.equal(await page.locator('.status').innerText(), 'draft');
+    assert.equal(await page.locator('.status').innerText(), status);
     assert.equal(await page.locator('.review-counts tbody tr').count(), 2);
     assert.equal(await page.locator('[data-cause="parser"] td').nth(1).innerText(), '379');
     assert.equal(await page.locator('[data-cause="hint"] td').nth(1).innerText(), '33');
@@ -56,6 +62,11 @@ try {
     assert.doesNotMatch(text, /have not been published|Draft only — not published/);
     assert.match(text, /not a live support-system view/);
     assert.match(text, /Proposed process change, not an accepted desk decision/);
+    assert.match(await page.locator('[data-cause="parser"] .issue-resolution').innerText(), /closed.*completed/);
+    assert.match(await page.locator('[data-cause="hint"] .issue-resolution').innerText(), /closed.*not_planned/);
+    assert.match(await page.locator('[data-resolution="parser"]').innerText(), /parser: fixed[\s\S]*completed/);
+    assert.match(await page.locator('[data-resolution="hint"]').innerText(), /hint: won't fix[\s\S]*form retired[\s\S]*not_planned/);
+    assert.match(await page.locator('.outcome-source').innerText(), /not independently observed/);
     const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
     assert.ok(pageWidth <= viewport.width, `${name}: no whole-page horizontal overflow`);
     assert.deepEqual(errors, []);
@@ -71,7 +82,7 @@ try {
     await context.close();
   }
   await writeFile(new URL('checks.json', output), JSON.stringify(results, null, 2) + '\n');
-  console.log('Draft review: desktop and mobile checked; counts, uncertainty notes and computed signature verified.');
+  console.log(`${target}: desktop and mobile checked; counts, distinct closure reasons, evidence provenance and computed signature verified.`);
   console.log(`Local screenshots, PDF, HTML and checks: ${fileURLToPath(output)}`);
 } finally {
   await browser.close();

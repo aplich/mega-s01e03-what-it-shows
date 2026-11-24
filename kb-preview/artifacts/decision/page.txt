@@ -1,0 +1,143 @@
+support desk · kb
+0002 · Split #4471 and deduplicate by cause
+
+owner aplich
+proposed
+reviewed 2026-11-24 · 0 days ago
+
+Context: check the rendered evidence
+
+The original incident says one issue and one queued fix, but its rendered What was merged table shows two causes. That table is computed by CauseTable.svelte from unique report IDs and the tenant-based groupByCause logic, not from the incident prose or browser-locale intake labels.
+
+This is a review of the export dated 2026-10-04, not a live support-system view. The later engineering outcome is preserved separately below.
+
+Two problems, two tickets
+
+The shared parser reads day-first input month-first; for example, R-41200 describes 7 April becoming 4 July. The booking-v3 hint is a separate mechanism: it says MM/DD/YYYY while the form reads the tenant's day-first convention. A parser fix does not establish that the hint was fixed.
+
+Count each report once
+
+427 exported rows contain 412 unique reports merged into #4471; 15 repeated rows are excluded. These are report counts, not unique people or bookings.
+
+Problem / KB assignment	Reports	Tenants	Received	Issue status
+Shared parser reads day-first input month-first
+parser	379	11	2026-04-01 → 2026-10-04	Separate GitHub issue
+closed · completed
+fixed
+booking-v3 hint disagrees with day-first interpretation
+hint	33	3	2026-04-17 → 2026-09-22	Separate GitHub issue
+closed · not_planned
+won't fix
+
+38 intake labels disagree with the supplied KB assignment. Use tenant locale, form and channel; browser locale and intake labels do not settle the cause.
+
+Assignments are not individual reproductions
+
+The supplied classifier uses tenant context, not the report body. 5 reports are flagged by the desk's notes. All 5 remain counted under parser. Their descriptions do not establish a day/month swap, and do not prove a shared timezone defect. The assignment counts above deliberately retain these reports rather than losing or double-counting them.
+
+R-41202 · kettle.books · email
+Invite says Tuesday 12 May. Calendar says Monday 11 May. My client turned up on the Monday. We had coffee.
+R-41209 · alder.physio · app
+Every booking in June is one day off. Only June. Why only June.
+R-41236 · nine.lanterns · app
+The invite arrived before I made the booking. I would like to know how.
+R-41344 · pale.harbour · email
+Client in Lisbon got Tuesday. Client in Toronto got Monday. Same meeting. We held it twice.
+R-41620 · lantern.row · email
+Tuesday 6 October showed as Monday. I moved it myself. I have stopped reporting these but my colleague says it helps you.
+
+Follow up with the original input, expected and actual date/time, tenant and recipient timezone, form/channel and raw invite or reproducible sequence. A different calendar day across cities can be correct for the same instant; the event's time and intended date semantics matter. If a different cause is established, create a linked issue and reconcile these counts.
+
+Do not merge by subject
+
+10 of the 12 distinct subjects appear in more than one assigned cause. Similar wording is a search aid, not a merge criterion.
+
+Read the queue timeline correctly
+
+The first recorded merge was 2026-07-02T09:03:00+02:00. 184 reports had already arrived. In the week starting 2026-06-29, 15 reports arrived while 189 were merged. The large merge bar reflects backlog processing, not a demonstrated spike in new reports. The timeline alone does not establish a deployed fix; the engineering outcomes are recorded separately with their sources.
+
+Received is not merged
+03-30
+04-27
+05-25
+06-22
+07-20
+08-17
+09-14
+ received ·  merged into #4471 · per week
+
+Read receivedAt separately from mergedAt. The July merge peak records backlog processing, not proof of a sudden arrival spike or an effective production fix.
+
+Decision: replace subject-only merging
+
+Proposed process change, not an accepted desk decision: supersede accepted decision 0001 with cause-based deduplication. Preserve that accepted historical record unchanged.
+
+Merge only when the established mechanism agrees, checking tenant locale, booking-form version and channel. Identical subjects can hide different causes; different subjects can describe the same cause. Browser locale and intakeTag are clues, not substitutes for tenant configuration. Missing evidence means investigate, not automatically merge.
+
+The old triage page repeats the subject-only policy, while its rendered explorer demonstrates the distinction. Its old review date and staleness warning are reasons to review the prose, not to rewrite an accepted decision.
+
+report A
+alder.physio
+copper.studio
+harbour.dental
+kettle.books
+lantern.row
+long.table
+morrow.tax
+nine.lanterns
+pale.harbour
+ridge.clinic
+stone.and.sons
+app
+email
+form
+hint
+report B
+alder.physio
+copper.studio
+harbour.dental
+kettle.books
+lantern.row
+long.table
+morrow.tax
+nine.lanterns
+pale.harbour
+ridge.clinic
+stone.and.sons
+app
+email
+form
+parser
+
+different causes — keep apart
+
+case	same subject	same cause
+app vs email, same tenant	no	yes
+same subject, same tenant, different channel	yes	no
+same subject, same channel, different tenant	yes	no
+different subject, same way in	no	yes
+no tenant on file	yes	no
+Engineering outcome: 5 October
+
+The reported course update says #4471 closed 05 oct. Engineering outcomes supplied by the repository owner through a solved S01E03 debrief and the linked reference resolutions; applied at the owner's request, not independently observed on this attempt's signed-in Challenge page. The source system is the course Challenge page.
+
+parser: fixed — fix(dates): parse dd/mm for eu locales. Our parser issue is closed with reason completed. Reference engineering resolution.
+hint: won't fix — booking-v3 form retired; the misleading hint was not fixed. Our hint issue is closed with reason not_planned. Reference engineering resolution.
+
+Closure is not the same as a fix: the parser is recorded as completed, but the hint is not planned because its form was retired. These are reported engineering decisions, not independently verified production tests or course acceptance. The report counts and unresolved diagnostic limitations remain in the historical record.
+
+Consequences and follow-up
+
+Keep both engineering records and their original counts. Separate parser regressions from reports about the retired booking-v3 form. The five one-day descriptions retain their supplied classification; their mechanisms are not independently proven by this record's closure. Link this replacement rule from operational guidance if approved by the desk owner.
+
+Sources
+Original report export, tenant JSON files, uniqueById, causeOf and groupByCause.
+desk-notes.json, CauseTable, QueueTimeline and DedupeExplorer.
+Original incident, triage page and accepted decision 0001, preserved unchanged.
+The owner-supplied solved debrief and linked public engineering resolutions above.
+
+Authored with OpenCode / litellm/gpt-6.1-sol; the frontmatter uses this student's own course-issued signature, not the reference solution's signature.
+
+desk ref DR-FKT6-MANP
+
+Pages are written by people. Tables and charts are built from data at render time.

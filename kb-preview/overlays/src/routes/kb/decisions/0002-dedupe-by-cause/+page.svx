@@ -1,0 +1,84 @@
+---
+layout: runbook
+title: '0002 · Split #4471 and deduplicate by cause'
+owner: aplich
+status: proposed
+reviewed: 2026-11-24
+signature: v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjExMzY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU1MTk2NDYsImV4cCI6MTc5NTYwNjA0Nn0.hHWBRkrSQ-B9Sq6OlIRdnU__rZp8qWesjpAbkF5C_dk
+---
+
+<script>
+  import ReviewFindings from '#lib/kb/ReviewFindings.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import EngineeringOutcomes from '#lib/kb/EngineeringOutcomes.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const signature = metadata.signature;
+</script>
+
+## Context: check the rendered evidence
+
+The [original incident](/kb/incidents/4471/) says one issue and one queued fix,
+but its rendered **What was merged** table shows two causes. That table is computed
+by `CauseTable.svelte` from unique report IDs and the tenant-based `groupByCause`
+logic, not from the incident prose or browser-locale intake labels.
+
+This is a review of the export dated 2026-10-04, not a live support-system view.
+The later engineering outcome is preserved separately below.
+
+## Two problems, two tickets
+
+The shared parser reads day-first input month-first; for example, R-41200 describes
+7 April becoming 4 July. The booking-v3 hint is a separate mechanism: it says
+`MM/DD/YYYY` while the form reads the tenant's day-first convention. A parser fix
+does not establish that the hint was fixed.
+
+<ReviewFindings />
+
+## Received is not merged
+
+<QueueTimeline ticket={4471} />
+
+Read `receivedAt` separately from `mergedAt`. The July merge peak records backlog
+processing, not proof of a sudden arrival spike or an effective production fix.
+
+## Decision: replace subject-only merging
+
+**Proposed process change, not an accepted desk decision:** supersede
+[accepted decision 0001](/kb/decisions/0001-dedupe-by-subject/) with cause-based
+deduplication. Preserve that accepted historical record unchanged.
+
+Merge only when the established mechanism agrees, checking tenant locale,
+booking-form version and channel. Identical subjects can hide different causes;
+different subjects can describe the same cause. Browser locale and `intakeTag`
+are clues, not substitutes for tenant configuration. Missing evidence means
+investigate, not automatically merge.
+
+The [old triage page](/kb/triage/dedupe/) repeats the subject-only policy, while its
+rendered explorer demonstrates the distinction. Its old review date and staleness
+warning are reasons to review the prose, not to rewrite an accepted decision.
+
+<DedupeExplorer />
+
+<EngineeringOutcomes />
+
+## Consequences and follow-up
+
+Keep both engineering records and their original counts. Separate parser
+regressions from reports about the retired booking-v3 form. The five one-day
+descriptions retain their supplied classification; their mechanisms are not
+independently proven by this record's closure. Link this replacement rule from
+operational guidance if approved by the desk owner.
+
+## Sources
+
+- Original report export, tenant JSON files, `uniqueById`, `causeOf` and `groupByCause`.
+- `desk-notes.json`, `CauseTable`, `QueueTimeline` and `DedupeExplorer`.
+- Original incident, triage page and accepted decision 0001, preserved unchanged.
+- The owner-supplied solved debrief and linked public engineering resolutions above.
+
+Authored with OpenCode / litellm/gpt-6.1-sol; the frontmatter uses this student's
+own course-issued signature, not the reference solution's signature.
+
+<RenderStamp {signature} />

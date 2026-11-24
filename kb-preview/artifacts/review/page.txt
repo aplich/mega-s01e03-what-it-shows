@@ -5,7 +5,7 @@ owner OpenCode harness; support desk review pending
 draft
 reviewed 2026-11-24 · 0 days ago
 
-Draft review of the KB export dated 2026-10-04, not a live support-system view. The two GitHub issues are linked in the computed table below. No production fix has been verified. This page does not claim that the support desk has accepted a new policy.
+Draft review of the KB export dated 2026-10-04, not a live support-system view. The two closed GitHub issues are linked in the computed table below with distinct closure reasons. Engineering outcomes are recorded separately from the historical export; no production fix was independently tested here. This page does not claim that the support desk has accepted a new policy.
 
 The original incident page says “One issue, one fix queued”. Its computed cause table disagrees. The supplied KB describes a shared-parser problem and a separate booking-form instruction problem, so one parser fix must not be treated as resolving both.
 
@@ -22,8 +22,12 @@ Count each report once
 Problem / KB assignment	Reports	Tenants	Received	Issue status
 Shared parser reads day-first input month-first
 parser	379	11	2026-04-01 → 2026-10-04	Separate GitHub issue
+closed · completed
+fixed
 booking-v3 hint disagrees with day-first interpretation
 hint	33	3	2026-04-17 → 2026-09-22	Separate GitHub issue
+closed · not_planned
+won't fix
 
 38 intake labels disagree with the supplied KB assignment. Use tenant locale, form and channel; browser locale and intake labels do not settle the cause.
 
@@ -50,7 +54,7 @@ Do not merge by subject
 
 Read the queue timeline correctly
 
-The first recorded merge was 2026-07-02T09:03:00+02:00. 184 reports had already arrived. In the week starting 2026-06-29, 15 reports arrived while 189 were merged. The large merge bar reflects backlog processing, not a demonstrated spike in new reports. No supplied evidence establishes a deployed fix.
+The first recorded merge was 2026-07-02T09:03:00+02:00. 184 reports had already arrived. In the week starting 2026-06-29, 15 reports arrived while 189 were merged. The large merge bar reflects backlog processing, not a demonstrated spike in new reports. The timeline alone does not establish a deployed fix; the engineering outcomes are recorded separately with their sources.
 
 03-30
 04-27
@@ -60,12 +64,23 @@ The first recorded merge was 2026-07-02T09:03:00+02:00. 184 reports had already 
 08-17
 09-14
  received ·  merged into #4471 · per week
+Engineering outcome: 5 October
+
+The reported course update says #4471 closed 05 oct. Engineering outcomes supplied by the repository owner through a solved S01E03 debrief and the linked reference resolutions; applied at the owner's request, not independently observed on this attempt's signed-in Challenge page. The source system is the course Challenge page.
+
+parser: fixed — fix(dates): parse dd/mm for eu locales. Our parser issue is closed with reason completed. Reference engineering resolution.
+hint: won't fix — booking-v3 form retired; the misleading hint was not fixed. Our hint issue is closed with reason not_planned. Reference engineering resolution.
+
+Closure is not the same as a fix: the parser is recorded as completed, but the hint is not planned because its form was retired. These are reported engineering decisions, not independently verified production tests or course acceptance. The report counts and unresolved diagnostic limitations remain in the historical record.
+
+The signed proposed decision 0002 records the replacement triage rule without rewriting accepted decision 0001.
+
 What the desk should do next
 Check the report body and the tenant's configured locale and form version. Compare expected and actual behavior, including how the date entered the system.
 Match a report to a demonstrated mechanism, not just a similar subject, browserLocale, or intakeTag. App/email reports and form reports can differ even for the same tenant.
 Track the shared-parser and booking-v3 hint problems in separate issues. Keep the original report IDs and the snapshot date with each count.
 Keep unexplained reports visibly unresolved pending evidence. Do not infer another defect solely from a city name, weekday, or the desk's note label.
-Before claiming resolution, verify the product flow, record the fix and check the disposition of the flagged reports. Passing tests of this KB classifier only verifies the KB, not the production product.
+Record each engineering outcome separately. A completed parser fix is not a fixed hint: the affected form was retired. Passing tests of this KB classifier only verifies the KB, not the production product or each flagged report.
 
 For example, R-41211 and R-41251 share a tenant and title, but the app/form difference changes their assignment. R-41256 and R-41428 even share the same body and channel; different tenants and form versions put them in different groups.
 
@@ -79,7 +94,7 @@ Reading and maintaining this page
 
 The export is a snapshot. Rendering it again recalculates the displayed values from the same files; it does not fetch later reports. Counts and review age are different: a recent review date is not proof of a correct diagnosis.
 
-When new data or updated issue status is available, update the report export through the agreed source, recompute the counts, reconcile moved report IDs, and re-read the rendered page before changing the review date. Keep both issues open until their separate verification criteria are satisfied. Do not interpret a partial month, a drop in reports, or a spike in merges as proof of a fix.
+When new report data is available, update it through the agreed source, recompute the counts, reconcile moved report IDs, and re-read the rendered page. Later issue resolutions do not rewrite the original report export: preserve both the snapshot and the separately sourced closure decisions. Do not interpret a partial month, a drop in reports, or a spike in merges as proof of a fix.
 
 This draft was authored with OpenCode / litellm/gpt-6.1-sol. Its frontmatter signature is the exact ticket issued by the course for this challenge, as required by the full course brief; it is not approval by the support desk. The desk reference is computed from that signature by the supplied component, not entered by hand.
 

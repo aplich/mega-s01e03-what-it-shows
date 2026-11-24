@@ -1,0 +1,1 @@
+import{A as e,B as t,E as n,X as r,d as i,g as a,t as o,w as s,y as c}from"./DEcmSmVu.js";var l=n(`<aside><!></aside>`);function u(n,u){let d=o(u,`kind`,3,`note`);var f=l(),p=e(f);c(p,()=>u.children),r(f),t(()=>i(f,1,a(d()),`svelte-17bri61`)),s(n,f)}export{u as t};

@@ -12,13 +12,15 @@ signature: v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjExMzY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYX
   import ReviewFindings from '#lib/kb/ReviewFindings.svelte';
   import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import EngineeringOutcomes from '#lib/kb/EngineeringOutcomes.svelte';
 
   const signature = metadata.signature;
 </script>
 
 <Callout>
 Draft review of the KB export dated 2026-10-04, not a live support-system view.
-The two GitHub issues are linked in the computed table below. No production fix has been verified.
+The two closed GitHub issues are linked in the computed table below with distinct closure reasons.
+Engineering outcomes are recorded separately from the historical export; no production fix was independently tested here.
 This page does not claim that the support desk has accepted a new policy.
 </Callout>
 
@@ -46,6 +48,11 @@ that every report individually demonstrates the assigned mechanism.
 
 <QueueTimeline ticket={4471} />
 
+<EngineeringOutcomes />
+
+The signed [proposed decision 0002](/kb/decisions/0002-dedupe-by-cause/)
+records the replacement triage rule without rewriting accepted decision 0001.
+
 ## What the desk should do next
 
 1. Check the report body and the tenant's configured locale and form version.
@@ -57,9 +64,9 @@ that every report individually demonstrates the assigned mechanism.
    Keep the original report IDs and the snapshot date with each count.
 4. Keep unexplained reports visibly unresolved pending evidence. Do not infer
    another defect solely from a city name, weekday, or the desk's note label.
-5. Before claiming resolution, verify the product flow, record the fix and check
-   the disposition of the flagged reports. Passing tests of this KB classifier
-   only verifies the KB, not the production product.
+5. Record each engineering outcome separately. A completed parser fix is not a
+   fixed hint: the affected form was retired. Passing tests of this KB classifier
+   only verifies the KB, not the production product or each flagged report.
 
 For example, `R-41211` and `R-41251` share a tenant and title, but the app/form
 difference changes their assignment. `R-41256` and `R-41428` even share the same
@@ -84,11 +91,11 @@ The export is a snapshot. Rendering it again recalculates the displayed values
 from the same files; it does not fetch later reports. Counts and review age are
 different: a recent review date is not proof of a correct diagnosis.
 
-When new data or updated issue status is available, update the report export
-through the agreed source, recompute the counts, reconcile moved report IDs, and
-re-read the rendered page before changing the review date. Keep both issues open
-until their separate verification criteria are satisfied. Do not interpret a
-partial month, a drop in reports, or a spike in merges as proof of a fix.
+When new report data is available, update it through the agreed source, recompute
+the counts, reconcile moved report IDs, and re-read the rendered page. Later issue
+resolutions do not rewrite the original report export: preserve both the snapshot
+and the separately sourced closure decisions. Do not interpret a partial month,
+a drop in reports, or a spike in merges as proof of a fix.
 
 This draft was authored with OpenCode / litellm/gpt-6.1-sol. Its frontmatter
 signature is the exact ticket issued by the course for this challenge, as required

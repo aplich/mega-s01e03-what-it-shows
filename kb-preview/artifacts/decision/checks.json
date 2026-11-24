@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-24T11:37:22.705Z",
+  "browser": "159.0.8154.6",
+  "path": "/kb/decisions/0002-dedupe-by-cause/",
+  "viewports": {
+    "desktop": {
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "pageWidth": 1280,
+      "errors": [],
+      "deskRef": "DR-FKT6-MANP"
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "errors": [],
+      "deskRef": "DR-FKT6-MANP"
+    }
+  }
+}

@@ -1,14 +1,14 @@
 {
-  "capturedAt": "2026-11-24T11:31:12.392Z",
+  "capturedAt": "2026-11-24T11:37:21.682Z",
   "browser": "159.0.8154.6",
   "base": "http://127.0.0.1:4173",
   "pages": {
     "index": {
       "path": "/kb/",
       "title": "Support knowledge base · support kb",
-      "text": "support desk · kb\nSupport knowledge base\n\nowner support desk\nliving\nreviewed 2026-09-28 · 57 days ago\n\nWhat the support desk knows, kept next to the code that knows it. One desk, every product: sched-prod (calendar invites for about 300k people) and the rest. When something breaks, the reports land here first.\n\nStart with triage if you are new on the desk.\n\nPages\npage\towner\tstatus\treviewed\n0001 · Duplicates share a subject line\trune\taccepted\t2024-06-11\n#4471 · dates parse mm/dd in eu locales\tsupport desk\tknown\t2026-09-30\n#4471 review · separate the mechanisms, keep the evidence\tOpenCode harness; support desk review pending\tdraft\t2026-11-24\nTriage: duplicate reports\tsupport desk\taccepted\t2024-06-11\nWriting a page\n\nKeep the words here and the logic in src/lib. A number that can be computed should be computed by a component, not typed into a paragraph.\n\nPages are written by people. Tables and charts are built from data at render time.",
+      "text": "support desk · kb\nSupport knowledge base\n\nowner support desk\nliving\nreviewed 2026-09-28 · 57 days ago\n\nWhat the support desk knows, kept next to the code that knows it. One desk, every product: sched-prod (calendar invites for about 300k people) and the rest. When something breaks, the reports land here first.\n\nStart with triage if you are new on the desk.\n\nPages\npage\towner\tstatus\treviewed\n0001 · Duplicates share a subject line\trune\taccepted\t2024-06-11\n0002 · Split #4471 and deduplicate by cause\taplich\tproposed\t2026-11-24\n#4471 · dates parse mm/dd in eu locales\tsupport desk\tknown\t2026-09-30\n#4471 review · separate the mechanisms, keep the evidence\tOpenCode harness; support desk review pending\tdraft\t2026-11-24\nTriage: duplicate reports\tsupport desk\taccepted\t2024-06-11\nWriting a page\n\nKeep the words here and the logic in src/lib. A number that can be computed should be computed by a component, not typed into a paragraph.\n\nPages are written by people. Tables and charts are built from data at render time.",
       "tables": [
-        "pageownerstatusreviewed0001 · Duplicates share a subject lineruneaccepted2024-06-11#4471 · dates parse mm/dd in eu localessupport deskknown2026-09-30#4471 review · separate the mechanisms, keep the evidenceOpenCode harness; support desk review pendingdraft2026-11-24Triage: duplicate reportssupport deskaccepted2024-06-11"
+        "pageownerstatusreviewed0001 · Duplicates share a subject lineruneaccepted2024-06-110002 · Split #4471 and deduplicate by causeaplichproposed2026-11-24#4471 · dates parse mm/dd in eu localessupport deskknown2026-09-30#4471 review · separate the mechanisms, keep the evidenceOpenCode harness; support desk review pendingdraft2026-11-24Triage: duplicate reportssupport deskaccepted2024-06-11"
       ],
       "staleBanner": 0
     },
@@ -56,7 +56,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CpqSEO31.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CdhJ9XJh.js",
       "status": 200
     },
     {
@@ -68,27 +68,19 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DI6N_uSi.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEzDGPtV.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/aSS3gGHD.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/77ONqvVy.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/C03nrhDx.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.cvnvKnHl.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.BEhScY6V.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.BaBlLVYB.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/3.feykWjYK.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.CQEHts_l.js",
       "status": 200
     },
     {
@@ -96,15 +88,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DFq0ozGy.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/3lpzRKfg.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/Callout.AbLv9dM_.css",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEcmSmVu.js",
       "status": 200
     },
     {
@@ -116,19 +100,19 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/gh3JtdJ-.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/RenderStamp.BbAobhDo.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/DedupeExplorer.DO6Yid7X.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/Callout.AbLv9dM_.css",
       "status": 200
     },
     {
       "url": "http://127.0.0.1:4173/_app/immutable/assets/_page.DuKfINX_.css",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/_page.BbAobhDo.css",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/_page.DO6Yid7X.css",
       "status": 200
     },
     {
@@ -136,23 +120,55 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/ctZ1aQmn.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/3.CxlbciYz.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BYKBFf7K.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/Dt4TJggc.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/CiqviD6z.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DPFA07NR.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/B_Sb3S3u.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/D6l-6u-1.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.CZuowJ7t.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DXUybumh.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BXWM2-hM.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/mAZ04kdk.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DDCU7a66.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DpVie-ya.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DSvNKWTz.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DnWMJsl9.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DROKdVxQ.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.Bo__HzcJ.js",
       "status": 200
     },
     {
@@ -160,15 +176,35 @@
       "status": 200
     },
     {
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CdhJ9XJh.js",
+      "status": 200
+    },
+    {
       "url": "http://127.0.0.1:4173/_app/immutable/chunks/DclECHGd.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CpqSEO31.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/payload.DSmR2FwN.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/payload.DSmR2FwN.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/77ONqvVy.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.CQEHts_l.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEzDGPtV.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEcmSmVu.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/DedupeExplorer.DO6Yid7X.css",
       "status": 200
     },
     {
@@ -180,51 +216,39 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/_page.DO6Yid7X.css",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/C03nrhDx.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DI6N_uSi.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.BaBlLVYB.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.BEhScY6V.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/7.C5YJOnOt.js",
-      "status": 200
-    },
-    {
       "url": "http://127.0.0.1:4173/_app/immutable/chunks/DK3Fl9T5.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/B_Sb3S3u.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.cvnvKnHl.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BYKBFf7K.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/Dt4TJggc.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DFq0ozGy.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DROKdVxQ.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/aSS3gGHD.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/8.DfSCB4Kq.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.CZuowJ7t.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BXWM2-hM.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/mAZ04kdk.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DDCU7a66.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.Bo__HzcJ.js",
       "status": 200
     },
     {
@@ -232,11 +256,11 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/payload.DSmR2FwN.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CdhJ9XJh.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CpqSEO31.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/payload.DSmR2FwN.js",
       "status": 200
     },
     {
@@ -244,23 +268,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/C03nrhDx.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/runbook.COyw0cbZ.css",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.BEhScY6V.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DI6N_uSi.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.BaBlLVYB.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEzDGPtV.js",
       "status": 200
     },
     {
@@ -268,23 +276,39 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/3lpzRKfg.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/4.D1ueaSDx.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DFq0ozGy.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.cvnvKnHl.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/4.RMmzBFY_.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.CQEHts_l.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/aSS3gGHD.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/runbook.COyw0cbZ.css",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.CZuowJ7t.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/77ONqvVy.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DPFA07NR.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/Dt4TJggc.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEcmSmVu.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.Bo__HzcJ.js",
       "status": 200
     },
     {
@@ -292,7 +316,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CpqSEO31.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/start.CdhJ9XJh.js",
       "status": 200
     },
     {
@@ -304,7 +328,11 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/Callout.AbLv9dM_.css",
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/QueueTimeline.BwRNheVv.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/77ONqvVy.js",
       "status": 200
     },
     {
@@ -312,7 +340,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/assets/QueueTimeline.BwRNheVv.css",
+      "url": "http://127.0.0.1:4173/_app/immutable/assets/Callout.AbLv9dM_.css",
       "status": 200
     },
     {
@@ -320,27 +348,11 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DI6N_uSi.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEzDGPtV.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/C03nrhDx.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.BEhScY6V.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/gh3JtdJ-.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DFq0ozGy.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/aSS3gGHD.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/entry/app.CQEHts_l.js",
       "status": 200
     },
     {
@@ -348,23 +360,39 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/5.BhEtoJ0H.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/6.DyyTNRXa.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.BaBlLVYB.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/0.cvnvKnHl.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/ctZ1aQmn.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DEcmSmVu.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BYKBFf7K.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DSvNKWTz.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.CZuowJ7t.js",
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/Dt4TJggc.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/BXWM2-hM.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DDCU7a66.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/chunks/DpVie-ya.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/_app/immutable/nodes/1.Bo__HzcJ.js",
       "status": 200
     }
   ],
