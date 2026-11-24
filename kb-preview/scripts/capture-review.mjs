@@ -9,6 +9,7 @@ const path = '/kb/incidents/4471-review/';
 const output = new URL('../artifacts/review/', import.meta.url);
 const source = await readFile(new URL('../overlays/src/routes/kb/incidents/4471-review/+page.svx', import.meta.url), 'utf8');
 const signature = source.match(/^signature: (.+)$/m)[1];
+assert.match(signature, /^v1\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/, 'Use the course-issued signature, not an author display name; the course validates its authenticity.');
 const links = JSON.parse(await readFile(new URL('../overlays/src/lib/data/review-links.json', import.meta.url), 'utf8'));
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ headless: true });

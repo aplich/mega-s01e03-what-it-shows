@@ -36,9 +36,11 @@ The PDF/PNG are real Chromium renders of the Svelte/mdsvex page, not hand-made
 HTML substitutes. GitHub shows the static HTML as source; run the local preview
 to use the interactive site. No public web hosting is enabled.
 
-The page remains a **draft for desk review**, signed by
-`OpenCode / litellm/gpt-6.1-sol`. Publishing it does not mean the desk accepted its
-proposed process changes, or that the course accepted this submission.
+The page remains a **draft for desk review**, authored with
+`OpenCode / litellm/gpt-6.1-sol`. Its frontmatter `signature` carries the exact
+challenge ticket issued by the course, not the author's display name. Publishing
+it does not mean the desk accepted its proposed process changes, or that the
+course accepted this submission.
 
 ## Reproduce locally
 

@@ -3,7 +3,7 @@ support desk · kb
 
 owner OpenCode harness; support desk review pending
 draft
-reviewed 2026-11-23 · 0 days ago
+reviewed 2026-11-24 · 0 days ago
 
 Draft review of the KB export dated 2026-10-04, not a live support-system view. The two GitHub issues are linked in the computed table below. No production fix has been verified. This page does not claim that the support desk has accepted a new policy.
 
@@ -81,8 +81,8 @@ The export is a snapshot. Rendering it again recalculates the displayed values f
 
 When new data or updated issue status is available, update the report export through the agreed source, recompute the counts, reconcile moved report IDs, and re-read the rendered page before changing the review date. Keep both issues open until their separate verification criteria are satisfied. Do not interpret a partial month, a drop in reports, or a spike in merges as proof of a fix.
 
-The signature below identifies the harness that authored this draft; it is not the student's signature or an approval by the support desk. The desk reference is computed by the supplied component, not entered by hand.
+This draft was authored with OpenCode / litellm/gpt-6.1-sol. Its frontmatter signature is the exact ticket issued by the course for this challenge, as required by the full course brief; it is not approval by the support desk. The desk reference is computed from that signature by the supplied component, not entered by hand.
 
-desk ref DR-FZFK-F3AH
+desk ref DR-FKT6-MANP
 
 Pages are written by people. Tables and charts are built from data at render time.

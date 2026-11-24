@@ -3,9 +3,9 @@ Triage: duplicate reports
 
 owner support desk
 accepted
-reviewed 2024-06-11 · 895 days ago · stale
+reviewed 2024-06-11 · 896 days ago · stale
 
-Nobody has re-read this page in 895 days. Check it against the live views before you rely on it.
+Nobody has re-read this page in 896 days. Check it against the live views before you rely on it.
 
 A busy morning brings hundreds of reports about the same thing. We keep one ticket per issue and merge every duplicate into it, so engineering sees one thread with a count.
 

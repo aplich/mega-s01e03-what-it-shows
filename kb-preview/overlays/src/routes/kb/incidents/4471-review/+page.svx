@@ -3,8 +3,8 @@ layout: runbook
 title: '#4471 review · separate the mechanisms, keep the evidence'
 owner: OpenCode harness; support desk review pending
 status: draft
-reviewed: 2026-11-23
-signature: OpenCode / litellm/gpt-6.1-sol
+reviewed: 2026-11-24
+signature: v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjExMzY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU1MTk2NDYsImV4cCI6MTc5NTYwNjA0Nn0.hHWBRkrSQ-B9Sq6OlIRdnU__rZp8qWesjpAbkF5C_dk
 ---
 
 <script>
@@ -90,8 +90,9 @@ re-read the rendered page before changing the review date. Keep both issues open
 until their separate verification criteria are satisfied. Do not interpret a
 partial month, a drop in reports, or a spike in merges as proof of a fix.
 
-The signature below identifies the harness that authored this draft; it is not
-the student's signature or an approval by the support desk. The desk reference
-is computed by the supplied component, not entered by hand.
+This draft was authored with OpenCode / litellm/gpt-6.1-sol. Its frontmatter
+signature is the exact ticket issued by the course for this challenge, as required
+by the full course brief; it is not approval by the support desk. The desk reference
+is computed from that signature by the supplied component, not entered by hand.
 
 <RenderStamp {signature} />

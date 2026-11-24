@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-23T16:52:13.938Z",
+  "capturedAt": "2026-11-24T11:30:54.614Z",
   "browser": "159.0.8154.6",
   "path": "/kb/incidents/4471-review/",
   "viewports": {
@@ -10,7 +10,7 @@
       },
       "pageWidth": 1280,
       "errors": [],
-      "deskRef": "DR-FZFK-F3AH"
+      "deskRef": "DR-FKT6-MANP"
     },
     "mobile": {
       "viewport": {
@@ -19,7 +19,7 @@
       },
       "pageWidth": 390,
       "errors": [],
-      "deskRef": "DR-FZFK-F3AH"
+      "deskRef": "DR-FKT6-MANP"
     }
   }
 }
