@@ -1,5 +1,8 @@
 # S01E03 — what it shows
 
+**Status: Solved — accepted by the course on 2026-11-24 at 11:40:54 UTC.**
+The [course debrief](https://hq.mega.dev/challenges/what-it-shows#debrief) is saved.
+
 Review of source support ticket **#4471** for the
 [MEGA.dev challenge](https://hq.mega.dev/challenges/what-it-shows).
 The supplied KB is a snapshot exported on **2026-10-04**, not a live support feed.
@@ -52,8 +55,13 @@ The incident review remains a **draft for desk review** and decision 0002 is
 **proposed**, not an accepted policy. Both are authored with
 `OpenCode / litellm/gpt-6.1-sol`. Its frontmatter `signature` carries the exact
 challenge ticket issued by the course, not the author's display name. Publishing
-it does not mean the desk accepted its proposed process changes, or that the
-course accepted this submission.
+it does not mean the desk accepted its proposed process changes. Course acceptance
+of this submission is recorded above; it does not independently verify production fixes.
+
+The accepted sequence was: submit two open issues, receive first-stage acceptance,
+then close parser as `completed` and hint as `not_planned`, and submit again.
+When the course reported no first-stage acceptance record, it explicitly requested
+reopening both issues; following that instruction unlocked the two-stage sequence.
 
 ## Reproduce locally
 
